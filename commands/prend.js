@@ -5,9 +5,9 @@ const random = require('random');
 var shuffle = require('shuffle-array');
 
 module.exports = {
-	name: 'prendArcane',
+	name: 'prend',
 	description: 'Pioche une carte de la pile ARCANE dans la main du joueur demandeur.',
-	aliases: ['takearcane','DrawArcane', 'piocheArcane','piochearcane','prendsArcane','prendsarcane','take','takeArcane'],
+	aliases: ['takearcane','DrawArcane', 'piocheArcane','piochearcane','prendArcane','prendarcane','take','takeArcane'],
 	usage: '<none>',
 	args: false,
 	execute(message, args) {
