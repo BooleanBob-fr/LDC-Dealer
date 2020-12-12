@@ -12,6 +12,7 @@ module.exports = {
 	args: true,
 	execute(message, args) {
 		var tmp = new Array();
+		var newCard = new Array();
 		var nb_tirage = args[0];
 		var nb_tirage_bis = 0;
 		var me_only = 0;
@@ -78,6 +79,7 @@ module.exports = {
 					} else {
 						msg+=" "+nb+" => "+config.cardNumber[element.number - 1]+config.cardType[element.type - 1]+"\n";
 					}
+					newCard.push(element);
 					nb+=1;
 				}
 			});
@@ -88,10 +90,10 @@ module.exports = {
 			}
 			
 			if ( player_found == 0 && tmp.length != 0 ) {
-				board.hands.push(tmp);
+				board.hands.push(newCard);
 				board.player.push(`${message.author.username}`);
 			} else {
-				tmp.forEach(function(element){
+				newCard.forEach(function(element){
 					board.hands[my_player_number].push(element);
 				});
 			}
