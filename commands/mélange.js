@@ -10,6 +10,11 @@ module.exports = {
 	cooldown: 5,
 	args: false,
 	execute(message, args) {
+		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}	
+		
 		//console.log(" * Discard length : " +board.discard.length);
 		//console.log(" * Deck length : " +board.deck.length);
 		var i = 0;
