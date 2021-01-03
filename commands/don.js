@@ -74,6 +74,11 @@ module.exports = {
 			board.player.push(player_target);
 		}
 		board.hands[my_player_number].splice(my_player_card_number - 1, 1);
+		if ( board.hands[my_player_number].length == 0 ) {
+			var removedHand = board.hands.splice(my_player_number,1);
+			var removedPlayer = board.player.splice(my_player_number,1);
+		}
+		
 		return message.channel.send(""+`${message.author.username}`+" donne la carte "+msg+" au joueur "+player_target+".", { split: true });
 	
 	},
