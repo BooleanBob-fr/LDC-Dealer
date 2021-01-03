@@ -18,12 +18,12 @@ module.exports = {
 		var problem = 0;
 		
 		if (board.deck == null) {
-			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
 		}	
 		
 		for (let arg_id = 0; arg_id < args.length; arg_id++) {
 			if(isNaN(args[arg_id]) || args[arg_id] > 99 || args[arg_id] <= 0 || args.indexOf(args[arg_id]) != arg_id ) {
-				message.channel.send(""+`${message.author.username}`+" : Ce numéro de carte est invalide : "+args[arg_id]+".", { split: true });
+				message.channel.send(""+`${message.author}`+": Ce numéro de carte est invalide : "+args[arg_id]+".", { split: true });
 				problem=1;
 			}
 				
@@ -82,13 +82,13 @@ module.exports = {
 						var removedPlayer = board.player.splice(my_player_number,1);
 					}
 				} else {
-					message.channel.send(""+`${message.author.username}`+" : Certains numéros de cartes en arguments semblent inexistants dans votre main.", { split: true });
+					message.channel.send(""+`${message.author}`+": Certains numéros de cartes en arguments semblent inexistants dans votre main.", { split: true });
 				}
 			} else {
-				message.channel.send(""+`${message.author.username}`+" : Pas de main, pas de chocolat.", { split: true });
+				message.channel.send(""+`${message.author}`+": Pas de main, pas de chocolat.", { split: true });
 			}	
 		} else {
-			message.channel.send(""+`${message.author.username}`+" : Les numéros de cartes en arguments semblent invalides. Rappel : [1-99] et sans doublon.", { split: true });
+			message.channel.send(""+`${message.author}`+": Les numéros de cartes en arguments semblent invalides. Rappel : [1-99] et sans doublon.", { split: true });
 		}			
 	},
 };
