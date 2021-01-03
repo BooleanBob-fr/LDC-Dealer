@@ -8,7 +8,7 @@ module.exports = {
 	name: 'joue',
 	description: 'Joue la carte <n> de la main du joueur demandeur.',
 	aliases: ['play','joue', 'Utilise','utilise','Play','défausse','defausse'],
-	usage: '<numéro de la carte dans la main [1-99]>',
+	usage: '<numéros de la carte dans la main [1-99] séparé d\'un espace>',
 	args: true,
 	execute(message, args) {
 			
