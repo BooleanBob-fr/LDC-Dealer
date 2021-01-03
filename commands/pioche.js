@@ -8,12 +8,17 @@ module.exports = {
 	name: 'pioche',
 	description: 'Pioche <n> cartes dans la pioche DECK ou ARCANE.',
 	aliases: ['draw','Draw', 'Pioche'],
-	usage: '<number [1-9]> [<DECK|ARCANE>]',
+	usage: '<nombre de cartes [1-9]> [<DECK|ARCANE>]',
 	args: true,
 	execute(message, args) {
 		var nb = 0;
+		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}	
+		
 		if (!args.length) {
-			return message.channel.send(`You didn't provide any arguments, ${message.author.username}!`);
+			return message.channel.send(`${message.author.username} : Des arguments sont manaquants. Rappel : nombre de cartes voulues.`);
 		} 
 		//console.log(" "+args[0]);
 		if(!isNaN(args[0]) && args[0] < 10 && args[0] > 0) {
