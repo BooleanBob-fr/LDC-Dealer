@@ -79,7 +79,7 @@ module.exports = {
 			var removedPlayer = board.player.splice(my_player_number,1);
 		}
 		
-		return message.channel.send(""+`${message.author.username}`+" donne la carte "+msg+" au joueur "+player_target+".", { split: true });
+		return message.channel.send(`${message.author}`+": "+`${message.author.username}`+" donne la carte "+msg+" au joueur "+player_target+".", { split: true });
 	
 	},
 };
