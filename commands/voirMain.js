@@ -16,6 +16,10 @@ module.exports = {
 		var my_player_number = 0;
 		var player_found = 0;
 		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}
+		
 		for (i = 0; i < board.player.length; i++) {
 			if ( board.player[i] == `${message.author.username}` ) {
 				my_player_number = i;
