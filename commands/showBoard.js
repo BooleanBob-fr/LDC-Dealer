@@ -27,7 +27,7 @@ module.exports = {
 				}
 				nb += 1;
 			});
-			message.author.send("__Contenu de la Pioche :__\n"+msg, { split: true });
+			message.author.send(`${message.author}`+": __Contenu de la Pioche :__\n"+msg, { split: true });
 			
 			msg = "";
 			nb = 1;
@@ -43,7 +43,7 @@ module.exports = {
 				}
 				nb += 1;
 			});
-			message.author.send("__Contenu du deck Arcane :__\n"+msg, { split: true });
+			message.author.send(`${message.author}`+": __Contenu du deck Arcane :__\n"+msg, { split: true });
 			
 			msg = "";
 			nb = 1;
@@ -62,7 +62,7 @@ module.exports = {
 				}
 				nb += 1;
 			});
-			message.author.send("__Contenu de la défausse :__\n"+msg, { split: true });
+			message.author.send(`${message.author}`+": __Contenu de la défausse :__\n"+msg, { split: true });
 			
 			msg = "";
 			nb = 1;
@@ -86,7 +86,7 @@ module.exports = {
 			
 			
 		} else {
-			message.channel.send("Plateau non-initialisé.", { split: true });
+			message.channel.send(`${message.author}`+": Plateau non-initialisé.", { split: true });
 		}	
 	},
 };
