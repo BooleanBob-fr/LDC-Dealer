@@ -72,7 +72,7 @@ module.exports = {
 			tmp.forEach(function(element){
 				if ( element.type == 5 ) {
 					do_shuffle = 1 ;
-					board.discard.push(element);
+					//board.discard.push(element);
 				} else {
 					if ( config.cardType[element.type - 1].indexOf("Rouge") > -1 ) {
 						msg+="** "+nb+" => "+config.cardNumber[element.number - 1]+config.cardType[element.type - 1]+"**\n";
@@ -89,7 +89,7 @@ module.exports = {
 				message.author.send("__Tirage de main pour "+`${message.author.username}`+" :__\n"+msg, { split: true });
 			}
 			
-			if ( player_found == 0 && tmp.length != 0 ) {
+			if ( player_found == 0 && newCard.length != 0 ) {
 				board.hands.push(newCard);
 				board.player.push(`${message.author.username}`);
 			} else {
