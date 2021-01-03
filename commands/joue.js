@@ -56,11 +56,11 @@ module.exports = {
 						var removedPlayer = board.player.splice(my_player_number,1);
 					}
 				} else {
-					message.channel.send(""+`${message.author.username}`+" : you don't have "+args[0]+" cards.", { split: true });
+					message.channel.send(""+`${message.author.username}`+" : Vous n'avez pas de cartes N°"+args[0]+".", { split: true });
 				}
 				
 			} else {
-				message.channel.send(""+`${message.author.username}`+" : User with no hand.", { split: true });
+				message.channel.send(""+`${message.author.username}`+" : Pas de main, pas de chocolat.", { split: true });
 			}			
 		}
 	},
