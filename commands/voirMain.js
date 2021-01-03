@@ -7,7 +7,7 @@ var shuffle = require('shuffle-array');
 module.exports = {
 	name: 'voirSaMain',
 	description: 'Envoie la main du joueur demandeur. (en MP).',
-	aliases: ['showhand','voirMain', 'voir', 'main','show'],
+	aliases: ['showhand','voirMain', 'voir', 'main','show','voirmain'],
 	usage: '<none>',
 	args: false,
 	execute(message, args) {
