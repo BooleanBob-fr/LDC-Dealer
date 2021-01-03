@@ -15,6 +15,10 @@ module.exports = {
 		var msg = "";
 		var i = 0;
 		var y = 0;
+		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}	
 			
 		for (i = board.player.length - 1; i >= 0 ; i--) {
 			for (j = board.hands[i].length - 1; j >= 0 ; j--) {
