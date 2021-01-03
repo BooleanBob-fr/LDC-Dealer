@@ -35,9 +35,9 @@ client.on('message', message => {
 	
 	//console.log(`Found asking for ${commandName}.`);
 	if (command.args && !args.length) {
-		let reply = `You didn't provide any arguments, ${message.author}!`;
+		let reply = `Vous avez oublié de donner les arguments de votre commande, ${message.author}!`;
 		if (command.usage) {
-			reply += `\nThe proper usage would be: \`${config.prefix}${command.name} ${command.usage}\``;
+			reply += `\nL\'usage de cette commande est : \`${config.prefix}${command.name} ${command.usage}\``;
 		}
 		return message.channel.send(reply);
 	}
@@ -47,7 +47,7 @@ client.on('message', message => {
 		command.execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute the following command : ' + `commandName`);
+		message.reply('Boum badaboum inattendu sur la commande : ' + `commandName`);
 	}
 
 });
