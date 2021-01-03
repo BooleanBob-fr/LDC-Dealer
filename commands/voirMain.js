@@ -44,7 +44,7 @@ module.exports = {
 				message.author.send(`${message.author}`+": __Contenu de la main de "+board.player[my_player_number]+" :__\n"+msg, { split: true });
 				
 		} else {
-			message.channel.send(""+`${message.author.}`+": Tu n'as pas de main, donc pas de chocolat.", { split: true });
+			message.channel.send(""+`${message.author}`+": Tu n'as pas de main, donc pas de chocolat.", { split: true });
 		}
 		
 	},
