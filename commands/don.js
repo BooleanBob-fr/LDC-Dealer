@@ -19,8 +19,12 @@ module.exports = {
 		var target_found = 0;
 		var nb = 1;
 		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}	
+		
 		if ( args.length != 2 ) {
-			return message.channel.send("Some arguments are missing. Need : card_number and player target.", { split: true });
+			return message.channel.send("Il manque des arguments. Rappel : Numéro de carte et Joueur ciblé par le don.", { split: true });
 		}
 		
 		if(!isNaN(args[0]) && args[0] < 99 && args[0] > 0) {
