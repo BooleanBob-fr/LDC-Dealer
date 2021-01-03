@@ -22,7 +22,7 @@ module.exports = {
 		var player_found = 0;
 		
 		if (board.deck == null) {
-			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
 		}
 		
 		if(!isNaN(args[0]) && args[0] < 10 && args[0] > 0) {
@@ -44,7 +44,7 @@ module.exports = {
 			if ( nb_tirage_bis != 0 ) {
 						
 				// Reset de pioche
-				message.channel.send("* Mélange du deck effectué en cours de tirage.", { split: true });
+				message.channel.send(`${message.author}`+": * Mélange du deck effectué en cours de tirage.", { split: true });
 				var i = 0;
 				for (i = 0; i < board.discard.length; i++) {
 					//console.log(" * " +i);
@@ -88,9 +88,9 @@ module.exports = {
 				}
 			});
 			if ( me_only == 0 ){
-				message.channel.send("__Tirage de main pour "+`${message.author.username}`+" :__\n"+msg, { split: true });
+				message.channel.send(`${message.author}`+": __Tirage de main pour "+`${message.author.username}`+" :__\n"+msg, { split: true });
 			} else {
-				message.author.send("__Tirage de main pour "+`${message.author.username}`+" :__\n"+msg, { split: true });
+				message.author.send(`${message.author}`+": __Tirage de main pour "+`${message.author.username}`+" :__\n"+msg, { split: true });
 			}
 			
 			if ( player_found == 0 && newCard.length != 0 ) {
@@ -112,10 +112,10 @@ module.exports = {
 			
 				board.discard = new Array();
 				shuffle(board.deck);
-				message.channel.send("Arcane(s) tirée(s). Mélange du deck effectué.", { split: true });
+				message.channel.send(`${message.author}`+": Arcane(s) tirée(s). Mélange du deck effectué.", { split: true });
 			}
 		} else {
-			message.channel.send("args must be a number [1-9].");
+			message.channel.send(`${message.author}`+": Le premier argument doit être compris entre 1 et 9 !");
 		}
 	},
 };
