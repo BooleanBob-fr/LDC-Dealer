@@ -122,6 +122,11 @@ module.exports = {
 				board.player.push(args[2]);
 			}
 			board.hands[from_player_number].splice(my_card_number - 1,1);
+			if ( board.hands[from_player_number].length == 0 ) {
+				var removedHand = board.hands.splice(from_player_number,1);
+				var removedPlayer = board.player.splice(from_player_number,1);
+			}
+
 		}
 		
 		if ( from_type == 1 && target_type == 2 ){
@@ -149,6 +154,10 @@ module.exports = {
 				board.deck.push(element);
 			});
 			board.hands[from_player_number].splice(my_card_number - 1,1);
+			if ( board.hands[from_player_number].length == 0 ) {
+				var removedHand = board.hands.splice(from_player_number,1);
+				var removedPlayer = board.player.splice(from_player_number,1);
+			}
 		}
 
 		if ( from_type == 1 && target_type == 3 ){
@@ -176,6 +185,10 @@ module.exports = {
 				board.arcane.push(element);
 			});
 			board.hands[from_player_number].splice(my_card_number - 1,1);
+			if ( board.hands[from_player_number].length == 0 ) {
+				var removedHand = board.hands.splice(from_player_number,1);
+				var removedPlayer = board.player.splice(from_player_number,1);
+			}
 		}
 
 		if ( from_type == 1 && target_type == 4 ){
@@ -203,6 +216,10 @@ module.exports = {
 				board.discard.push(element);
 			});
 			board.hands[from_player_number].splice(my_card_number - 1,1);
+			if ( board.hands[from_player_number].length == 0 ) {
+				var removedHand = board.hands.splice(from_player_number,1);
+				var removedPlayer = board.player.splice(from_player_number,1);
+			}
 		}
 
 		if ( from_type == 2 && target_type == 1 ) {
