@@ -46,10 +46,10 @@ module.exports = {
 				if(problem == 0) {
 					// Construction du message avec l'ensemble des cartes jouées
 					var nb = 1;
+					msg = ""+`${message.author.username}`+" joue de sa main : \n";
 					for (let arg_id = 0; arg_id < args.length; arg_id++) {
 						var card_number = args[arg_id] - 1;
 						var element = board.hands[my_player_number][card_number];
-						msg = ""+`${message.author.username}`+" joue de sa main : \n";
 						if ( element.type == 5 ) {
 							msg+="```css\n"+nb+" => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
 						} else {
