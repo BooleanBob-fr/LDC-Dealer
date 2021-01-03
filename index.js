@@ -31,11 +31,11 @@ client.on('message', message => {
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-	if (!command) return message.channel.send(`${message.author.username}`+' : Cette commande n\'existe pas.');
+	if (!command) return message.channel.send(`${message.author}`+' : Cette commande n\'existe pas.');
 	
 	//console.log(`Found asking for ${commandName}.`);
 	if (command.args && !args.length) {
-		let reply = `${message.author.username}`+' : Vous avez oublié de donner les arguments de votre commande !';
+		let reply = `${message.author}`+' : Vous avez oublié de donner les arguments de votre commande !';
 		if (command.usage) {
 			reply += '\nL\'usage de cette commande est : '+`${config.prefix}${command.name} ${command.usage}`;
 		}
@@ -47,7 +47,7 @@ client.on('message', message => {
 		command.execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('`${message.author.username}` :*Boum badaboum* inattendu sur la commande : ' + `commandName`);
+		message.reply('`${message.author}` :*Boum badaboum* inattendu sur la commande : ' + `commandName`);
 	}
 
 });
