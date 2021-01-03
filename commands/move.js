@@ -26,11 +26,11 @@ module.exports = {
 		var card = null;
 		
 		if (board.deck == null) {
-			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
 		}	
 		
 		if ( args.length != 3 ) {
-			return message.channel.send("Des arguments sont manquants. Rappel : Pile initiale, numéro de carte et Pile destination.", { split: true });
+			return message.channel.send(`${message.author}`+": Des arguments sont manquants. Rappel : Pile initiale, numéro de carte et Pile destination.", { split: true });
 		}
 		
 		// DECK/ARCANE/DISCARD
@@ -54,7 +54,7 @@ module.exports = {
 				}
 			}
 			if ( from_player_found == 0 ) {
-				return message.channel.send("La main du joueur "+args[0]+" n'existe pas.", { split: true });
+				return message.channel.send(`${message.author}`+": La main du joueur "+args[0]+" n'existe pas.", { split: true });
 			}
 		}
 		
@@ -89,7 +89,7 @@ module.exports = {
 		//console.log(""+from_type +" "+from+" "+args[2].charAt(0)+" "+target_type+" "+args[2].charAt(0)+" "+target);
 		if ( from_type == 0 || target_type == 0 || args[0] == args[2]){
 			console.log("From_type : "+from_type+" | target_type : "+target_type);
-			return message.channel.send("Deck ou main de départ ou d'arrivée non trouvé(s) : "+args[0]+" ou "+args[2]+" invalide.", { split: true });
+			return message.channel.send(`${message.author}`+": Deck ou main de départ ou d'arrivée non trouvé(s) : "+args[0]+" ou "+args[2]+" invalide.", { split: true });
 		}
 		
 		if ( from_type == 1 && target_type == 1 ){
@@ -126,7 +126,7 @@ module.exports = {
 		
 		if ( from_type == 1 && target_type == 2 ){
 			if ( board.hands[from_player_number].length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.hands[from_player_number].length+" cartes dans la main du joueur "+board.player[from_player_number]+". Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.hands[from_player_number].length+" cartes dans la main du joueur "+board.player[from_player_number]+". Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.hands[from_player_number][my_card_number - 1];
@@ -153,7 +153,7 @@ module.exports = {
 
 		if ( from_type == 1 && target_type == 3 ){
 			if ( board.hands[from_player_number].length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.hands[from_player_number].length+" cartes dans la main du joueur "+board.player[from_player_number]+". Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.hands[from_player_number].length+" cartes dans la main du joueur "+board.player[from_player_number]+". Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.hands[from_player_number][my_card_number - 1];
@@ -180,7 +180,7 @@ module.exports = {
 
 		if ( from_type == 1 && target_type == 4 ){
 			if ( board.hands[from_player_number].length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.hands[from_player_number].length+" cartes dans la main du joueur "+board.player[from_player_number]+". Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.hands[from_player_number].length+" cartes dans la main du joueur "+board.player[from_player_number]+". Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.hands[from_player_number][my_card_number - 1];
@@ -207,7 +207,7 @@ module.exports = {
 
 		if ( from_type == 2 && target_type == 1 ) {
 			if ( board.deck.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.deck.length+" cartes dans le deck de base. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.deck.length+" cartes dans le deck de base. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.deck[my_card_number - 1];
@@ -240,7 +240,7 @@ module.exports = {
 				
 		if ( from_type == 2 && target_type == 3 ) {
 			if ( board.deck.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.deck.length+" cartes dans le deck de base. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.deck.length+" cartes dans le deck de base. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.deck[my_card_number - 1];
@@ -268,7 +268,7 @@ module.exports = {
 		
 		if ( from_type == 2 && target_type == 4 ) {
 			if ( board.deck.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.deck.length+" cartes dans le deck de base. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.deck.length+" cartes dans le deck de base. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.deck[my_card_number - 1];
@@ -296,7 +296,7 @@ module.exports = {
 		
 		if ( from_type == 3 && target_type == 1 ) {
 			if ( board.arcane.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.arcane.length+" cartes dans le deck Arcane. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.arcane.length+" cartes dans le deck Arcane. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.arcane[my_card_number - 1];
@@ -328,7 +328,7 @@ module.exports = {
 		
 		if ( from_type == 3 && target_type == 2 ) {
 			if ( board.arcane.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.arcane.length+" cartes dans le deck Arcane. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.arcane.length+" cartes dans le deck Arcane. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.arcane[my_card_number - 1];
@@ -357,7 +357,7 @@ module.exports = {
 				
 		if ( from_type == 3 && target_type == 4 ) {
 			if ( board.arcane.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.arcane.length+" cartes dans le deck Arcane. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.arcane.length+" cartes dans le deck Arcane. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.arcane[my_card_number - 1];
@@ -385,7 +385,7 @@ module.exports = {
 		
 		if ( from_type == 4 && target_type == 1 ) {
 			if ( board.discard.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.discard.length+" cartes dans la défausse. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.discard.length+" cartes dans la défausse. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.discard[my_card_number - 1];
@@ -417,7 +417,7 @@ module.exports = {
 		
 		if ( from_type == 4 && target_type == 2 ) {
 			if ( board.discard.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.discard.length+" cartes dans la défausse. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.discard.length+" cartes dans la défausse. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.discard[my_card_number - 1];
@@ -445,7 +445,7 @@ module.exports = {
 		
 		if ( from_type == 4 && target_type == 3 ) {
 			if ( board.discard.length < my_card_number ){
-				return message.channel.send("Il n'y a que "+board.discard.length+" cartes dans la défausse. Numéro demandé : "+my_card_number+".", { split: true });
+				return message.channel.send(`${message.author}`+": Il n'y a que "+board.discard.length+" cartes dans la défausse. Numéro demandé : "+my_card_number+".", { split: true });
 			}			
 		
 			card = board.discard[my_card_number - 1];
@@ -472,7 +472,7 @@ module.exports = {
 		}
 		
 				
-		return message.channel.send("__Déplacement depuis "+args[0]+" vers "+args[2]+" pour la carte :__\n"+msg, { split: true });
+		return message.channel.send(`${message.author}`+": __Déplacement depuis "+args[0]+" vers "+args[2]+" pour la carte :__\n"+msg, { split: true });
 	
 	},
 };
