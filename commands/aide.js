@@ -11,7 +11,7 @@ module.exports = {
 		const { commands } = message.client;
 
 		if (!args.length) {
-			data.push('`${message.author.username}` : Voici la liste des commandes disponibles :');
+			data.push(`${message.author.username}`+' : Voici la liste des commandes disponibles :');
 			data.push(commands.map(command => command.name).join(', '));
 			data.push(`\nVous pouvez obtenir plus d'informations sur une commande via : \`${prefix}help [command name]\``);
 
@@ -31,7 +31,7 @@ module.exports = {
 		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
 		if (!command) {
-			return message.reply('`${message.author.username}` : Cette commande n\'existe pas!');
+			return message.reply(`${message.author.username}`+' : Cette commande n\'existe pas!');
 		}
 
 		data.push(`**Name:** ${command.name}`);
