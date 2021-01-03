@@ -8,7 +8,7 @@ module.exports = {
 	name: 'joue',
 	description: 'Joue la carte <n> de la main du joueur demandeur.',
 	aliases: ['play','joue', 'Utilise','utilise','Play','défausse','defausse'],
-	usage: '<numéro de la carte dans la main [1-9]>',
+	usage: '<numéro de la carte dans la main [1-99]>',
 	args: true,
 	execute(message, args) {
 			
@@ -16,7 +16,7 @@ module.exports = {
 		var my_player_number = 0;
 		var player_found = 0;
 		
-		if(!isNaN(args[0]) && args[0] < 99 && args[0] > 0) {
+		if(!isNaN(args[0]) && args[0] <= 99 && args[0] > 0) {
 			
 			
 			
