@@ -12,7 +12,7 @@ module.exports = {
 	execute(message, args) {
 		
 		if (board.deck == null) {
-			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
 		}	
 		
 		//console.log(" * Discard length : " +board.discard.length);
@@ -25,7 +25,7 @@ module.exports = {
 		
 		board.discard = new Array();
 		shuffle(board.deck);
-		message.channel.send("Mélange effectué.", { split: true });
+		message.channel.send(`${message.author}`+": Mélange effectué.", { split: true });
 		//console.log(" * Discard length : " +board.discard.length);
 		//console.log(" * Deck length : " +board.deck.length);
 	},
