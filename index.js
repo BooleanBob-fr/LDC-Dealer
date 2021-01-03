@@ -31,7 +31,7 @@ client.on('message', message => {
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-	if (!command) return;
+	if (!command) return message.channel.send('Cette commande n\'existe pas.');
 	
 	//console.log(`Found asking for ${commandName}.`);
 	if (command.args && !args.length) {
