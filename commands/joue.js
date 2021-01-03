@@ -18,7 +18,7 @@ module.exports = {
 		var problem = 0;
 		
 		for (let arg_id = 0; arg_id < args.length; arg_id++) {
-			if(isNaN(args[arg_id]) || args[arg_id] > 99 || args[arg_id] <= 0 || args.indexof(args[arg_id]) != arg_id ) {
+			if(isNaN(args[arg_id]) || args[arg_id] > 99 || args[arg_id] <= 0 || args.indexOf(args[arg_id]) != arg_id ) {
 				message.channel.send(""+`${message.author.username}`+" : Ce numéro de carte est invalide : "+args[arg_id]+".", { split: true });
 				problem=1;
 			}
