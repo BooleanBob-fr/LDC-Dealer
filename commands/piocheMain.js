@@ -21,6 +21,10 @@ module.exports = {
 		var my_player_number = 0;
 		var player_found = 0;
 		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}
+		
 		if(!isNaN(args[0]) && args[0] < 10 && args[0] > 0) {
 			
 			//message.channel.send(` DrawHand pour ${message.author}.`, { split: true });
