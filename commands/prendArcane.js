@@ -11,16 +11,18 @@ module.exports = {
 	usage: '<none>',
 	args: false,
 	execute(message, args) {
+		
+		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}
+		
 		var tmp = new Array();
 		var me_only = 0;
 		var nb = random.int(0, board.arcane.length - 1);
 		var msg = "";
 		var my_player_number = 0;
 		var player_found = 0;
-		
-		if (board.deck == null) {
-			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
-		}
 		
 		tmp.push(board.arcane[nb]);
 		board.arcane.splice(nb, 1);
