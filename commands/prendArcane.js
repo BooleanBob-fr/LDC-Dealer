@@ -5,7 +5,7 @@ const random = require('random');
 var shuffle = require('shuffle-array');
 
 module.exports = {
-	name: 'prend',
+	name: 'prendArcane',
 	description: 'Pioche une carte de la pile ARCANE dans la main du joueur demandeur.',
 	aliases: ['takearcane','DrawArcane', 'piocheArcane','piochearcane','prendArcane','prendarcane','take','takeArcane'],
 	usage: '<none>',
@@ -17,6 +17,10 @@ module.exports = {
 		var msg = "";
 		var my_player_number = 0;
 		var player_found = 0;
+		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}
 		
 		tmp.push(board.arcane[nb]);
 		board.arcane.splice(nb, 1);
