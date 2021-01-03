@@ -2,18 +2,18 @@ const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'aide',
-	description: 'List all of my commands or info about a specific command.',
+	description: 'Liste les commandes disponibles ou fournit des informations sur une commande en argument.',
 	aliases: ['help','commands'],
-	usage: '[command name]',
-	cooldown: 5,
+	usage: '[nom de la commande]',
+	cooldown: 2,
 	execute(message, args) {
 		const data = [];
 		const { commands } = message.client;
 
 		if (!args.length) {
-			data.push('Here\'s a list of all my commands:');
+			data.push('`${message.author.username}` : Voici la liste des commandes disponibles :');
 			data.push(commands.map(command => command.name).join(', '));
-			data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
+			data.push(`\nVous pouvez obtenir plus d'informations sur une commande via : \`${prefix}help [command name]\``);
 
 			//return message.author.send(data, { split: true })
 			return message.reply(data, { split: true })
@@ -31,7 +31,7 @@ module.exports = {
 		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
 		if (!command) {
-			return message.reply('that\'s not a valid command!');
+			return message.reply('`${message.author.username}` : Cette commande n\'existe pas!');
 		}
 
 		data.push(`**Name:** ${command.name}`);
