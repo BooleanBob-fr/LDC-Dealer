@@ -45,6 +45,7 @@ module.exports = {
 				
 				if(problem == 0) {
 					// Construction du message avec l'ensemble des cartes jouées
+					var nb = 1;
 					for (let arg_id = 0; arg_id < args.length; arg_id++) {
 						var card_number = args[arg_id] - 1;
 						var element = board.hands[my_player_number][card_number];
@@ -58,6 +59,7 @@ module.exports = {
 								msg+=" "+nb+" => "+config.cardNumber[element.number - 1]+config.cardType[element.type - 1]+"\n";
 							}
 						}
+						nb++;
 						// Copie des cartes jouées dans la défausse
 						board.discard.push(element);
 					}
@@ -69,12 +71,11 @@ module.exports = {
 					// Suppression des cartes en ordre décroissant et si besoin, suppression de la main
 					for (let arg_id = 0; arg_id < args.length; arg_id++) {
 						var card_number = args[arg_id] - 1;
-						
 						var removedItem = board.hands[my_player_number].splice(card_number,1);
-						if ( board.hands[my_player_number].length == 0 ) {
-							var removedHand = board.hands.splice(my_player_number,1);
-							var removedPlayer = board.player.splice(my_player_number,1);
-						}
+					}
+					if ( board.hands[my_player_number].length == 0 ) {
+						var removedHand = board.hands.splice(my_player_number,1);
+						var removedPlayer = board.player.splice(my_player_number,1);
 					}
 				} else {
 					message.channel.send(""+`${message.author.username}`+" : Certains numéros de cartes en arguments semblent inexistants dans votre main.", { split: true });
