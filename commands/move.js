@@ -7,8 +7,8 @@ var shuffle = require('shuffle-array');
 module.exports = {
 	name: 'déplace',
 	description: 'Déplace la carte N°<n> d\'une pile ou main vers une autre pile ou main.',
-	aliases: ['move','movecard','deplace'],
-	usage: '<pile_origine> <numéro_carte_origine> <pile_destination>',
+	aliases: ['mv','movecard','deplace','déplace'],
+	usage: '<pile_origine> <numéro_carte_origine> <pile_destination> ; Pile : deck,arcane,discard,joueur',
 	args: true,
 	execute(message, args) {
 		var tmp = new Array();
@@ -25,8 +25,12 @@ module.exports = {
 		var target_type = 0;
 		var card = null;
 		
+		if (board.deck == null) {
+			return message.channel.send("Le plateau n'est pas initialisé.", { split: true });
+		}	
+		
 		if ( args.length != 3 ) {
-			return message.channel.send("Some arguments are missing. Need : initial storage, card_number and player target.", { split: true });
+			return message.channel.send("Des arguments sont manquants. Rappel : Pile initiale, numéro de carte et Pile destination.", { split: true });
 		}
 		
 		// DECK/ARCANE/DISCARD
