@@ -37,7 +37,7 @@ client.on('message', message => {
 	if (command.args && !args.length) {
 		let reply = `${message.author.username}`+' : Vous avez oublié de donner les arguments de votre commande !';
 		if (command.usage) {
-			reply += '\nL\'usage de cette commande est : '+\`${config.prefix}${command.name} ${command.usage}\`;
+			reply += '\nL\'usage de cette commande est : '+`${config.prefix}${command.name} ${command.usage}`;
 		}
 		return message.channel.send(reply);
 	}
