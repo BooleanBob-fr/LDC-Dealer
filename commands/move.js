@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['mv','movecard','deplace','déplace'],
 	usage: '<pile_origine> <numéro_carte_origine> <pile_destination> ; Pile : deck,arcane,discard,joueur',
 	args: true,
+	user: 'MJ',
 	execute(message, args) {
 		var tmp = new Array();
 		var msg = "";
