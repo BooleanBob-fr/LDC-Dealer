@@ -5,6 +5,7 @@ module.exports = {
 	description: 'Liste les commandes disponibles ou fournit des informations sur une commande en argument.',
 	aliases: ['help','commands'],
 	usage: '[nom de la commande]',
+	user: 'PJ',
 	cooldown: 2,
 	execute(message, args) {
 		const data = [];
