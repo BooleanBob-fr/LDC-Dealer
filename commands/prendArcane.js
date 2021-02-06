@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['takearcane','DrawArcane', 'piocheArcane','piochearcane','prendArcane','prendarcane','take','takeArcane','prend'],
 	usage: '<none>',
 	args: false,
+	user: 'PJ',
 	execute(message, args) {
 		
 		
