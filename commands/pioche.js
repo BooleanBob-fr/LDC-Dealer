@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['draw','Draw', 'Pioche'],
 	usage: '<nombre de cartes [1-9]> [<DECK|ARCANE>]',
 	args: true,
+	user: 'PJ',
 	execute(message, args) {
 		var nb = 0;
 		
