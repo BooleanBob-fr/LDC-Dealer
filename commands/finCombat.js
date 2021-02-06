@@ -5,9 +5,9 @@ const random = require('random');
 var shuffle = require('shuffle-array');
 
 module.exports = {
-	name: 'FinDeCombat',
+	name: 'finCombat',
 	description: 'Vide les mains des joueurs à l\'exception des cartes Arcane.',
-	aliases: ['FinDeCombat','flush','clean','vide'],
+	aliases: ['finCombat','flush','clean','vide','fin'],
 	usage: '<none>',
 	args: false,
 	execute(message, args) {
