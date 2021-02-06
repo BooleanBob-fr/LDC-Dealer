@@ -19,7 +19,7 @@ module.exports = {
 			data.push('\n```Vous pouvez obtenir plus d\'informations sur une commande via : '+`${prefix}help [command name]`+'```');
 
 			//return message.author.send(data, { split: true })
-			return message.reply(data, { split: true })
+			return message.author.send(data, { split: true })
 //				.then(() => {
 //					if (message.channel.type === 'dm') return;
 //					message.reply('I\'ve sent you a DM with all my commands!');
@@ -34,7 +34,7 @@ module.exports = {
 		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
 		if (!command) {
-			return message.reply(' : Cette commande n\'existe pas!');
+			return message.author.send(' : Cette commande n\'existe pas!');
 		}
 
 		data.push(`**Name:** ${command.name}`);
@@ -45,6 +45,6 @@ module.exports = {
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
-		message.channel.send(data, { split: true });
+		message.author.send(data, { split: true });
 	},
 };
