@@ -13,6 +13,8 @@ module.exports = {
 
 		if (!args.length) {
 			data.push(' : Voici la liste des commandes disponibles :');
+			data.push(commands.map(function(command){ if( command.user == 'PJ' ) { return command.name; } }).join(', '));
+			data.push('\n Voici la liste des commandes disponibles pour les PJ :');
 			data.push(commands.map(command => command.name).join(', '));
 			data.push(`\nVous pouvez obtenir plus d'informations sur une commande via : \`${prefix}help [command name]\``);
 
