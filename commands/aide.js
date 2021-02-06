@@ -16,7 +16,7 @@ module.exports = {
 			data.push(commands.map(function(command){ if( command.user == 'PJ' ) { return command.name+" : "+command.aliases+"\n"+"** -> "+command.description+"**\n"; } }).join(''));
 			data.push('\n``` Voici la liste des commandes disponibles pour les MJ et leurs alias :```');
 			data.push(commands.map(function(command){ if( command.user == 'MJ' ) { return command.name+" : "+command.aliases+"\n"+"** -> "+command.description+"**\n"; } }).join(''));
-			data.push('\n```Vous pouvez obtenir plus d\'informations sur une commande via : '+`\`${prefix}help [command name]\`````);
+			data.push('\n```Vous pouvez obtenir plus d\'informations sur une commande via : '+`${prefix}help [command name]`+'```');
 
 			//return message.author.send(data, { split: true })
 			return message.reply(data, { split: true })
