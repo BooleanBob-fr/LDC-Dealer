@@ -7,7 +7,7 @@ var shuffle = require('shuffle-array');
 module.exports = {
 	name: 'finCombat',
 	description: 'Vide les mains des joueurs à l\'exception des cartes Arcane.',
-	aliases: ['finCombat','flush','clean','vide','fin'],
+	aliases: ['finCombat','flush','clean','vide','fin','fincombat'],
 	usage: '<none>',
 	args: false,
 	execute(message, args) {
