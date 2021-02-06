@@ -8,6 +8,7 @@ module.exports = {
 	aliases: ['showdiscard','voirDéfausse','voirdéfausse','voirDfausse','voirdefausse'],
 	usage: '<no_args>',
 	args: false,
+	user: 'MJ',
 	cooldown: 5,
 	execute(message, args) {
 		
