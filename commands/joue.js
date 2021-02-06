@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['play','joue', 'Utilise','utilise','Play','défausse','defausse'],
 	usage: '<numéros de la carte dans la main [1-99] séparés d\'un espace>',
 	args: true,
+	user: 'PJ',
 	execute(message, args) {
 			
 		var msg = "";
