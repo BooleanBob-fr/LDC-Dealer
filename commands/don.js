@@ -9,6 +9,7 @@ module.exports = {
 	description: 'Donne la carte <n> de la main du joueur demandeur à un autre joueur.',
 	aliases: ['givecard','give','donne'],
 	usage: '<numéro_de_carte_dans_la_main> <nom_autre_joueur>',
+	user: 'PJ',
 	args: true,
 	execute(message, args) {
 		var tmp = new Array();
