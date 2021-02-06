@@ -11,6 +11,7 @@ module.exports = {
 	usage: '<no_args>',
 	cooldown: 5,
 	args: false,
+	user: 'MJ',
 	execute(message, args) {
 		
 		// Check if board was initialized and clean up
