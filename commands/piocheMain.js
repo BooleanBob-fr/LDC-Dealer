@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['piochemain','DrawHand', 'piocheMain','drawhand'],
 	usage: '<nombre de cartes : [1-9]>',
 	args: true,
+	user: 'PJ',
 	execute(message, args) {
 		var tmp = new Array();
 		var newCard = new Array();
