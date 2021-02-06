@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['showhands','voirMains'],
 	usage: '<none>',
 	args: false,
+	user: 'MJ',
 	execute(message, args) {
 
 		var msg = "";
