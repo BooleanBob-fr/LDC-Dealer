@@ -9,6 +9,7 @@ module.exports = {
 	usage: '<no_args>',
 	args: false,
 	cooldown: 5,
+	user: 'MJ',
 	execute(message, args) {
 				
 		// Check if board was initialized
