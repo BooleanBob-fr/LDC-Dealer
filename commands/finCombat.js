@@ -10,6 +10,7 @@ module.exports = {
 	aliases: ['finCombat','flush','clean','vide','fin','fincombat'],
 	usage: '<none>',
 	args: false,
+	user: 'MJ',
 	execute(message, args) {
 
 		var msg = "";
