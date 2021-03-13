@@ -47,7 +47,7 @@ client.on('message', message => {
 		command.execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('`${message.author}` :*Boum badaboum* inattendu sur la commande : ' + `commandName`);
+		message.reply('${message.author} :*Boum badaboum* inattendu sur la commande : ' + ${command.name});
 	}
 
 });
