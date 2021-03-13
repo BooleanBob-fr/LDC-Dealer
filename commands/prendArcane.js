@@ -55,6 +55,7 @@ module.exports = {
 		if ( player_found == 0 && tmp.length != 0 ) {
 			board.hands.push(tmp);
 			board.player.push(`${message.author.username}`);
+			my_player_number = board.player.length() -1 ;
 		} else {
 			tmp.forEach(function(element){
 				board.hands[my_player_number].push(element);
