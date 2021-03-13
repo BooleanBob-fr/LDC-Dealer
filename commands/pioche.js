@@ -19,7 +19,7 @@ module.exports = {
 		}	
 		
 		if (!args.length) {
-			return message.channel.send(`${message.author} : Des arguments sont manaquants. Rappel : nombre de cartes voulues.`);
+			return message.channel.send(`${message.author} : Des arguments sont manquants. Rappel : nombre de cartes voulues.`);
 		} 
 		//console.log(" "+args[0]);
 		if(!isNaN(args[0]) && args[0] < 10 && args[0] > 0) {
@@ -72,22 +72,23 @@ module.exports = {
 				nb= 1;
 				tmp.forEach(function(element){
 					if ( element.type == 5 ) {
-						msg+="```css\n"+nb+" => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
-						do_shuffle = 1 ;
+						msg+="```css\n * => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
+						do_shuffle += 1 ;
 					} else {
 						if ( config.cardType[element.type - 1].indexOf("Rouge") > -1 ) {
 							msg+="** "+nb+" => "+config.cardNumber[element.number - 1]+config.cardType[element.type - 1]+"**\n";
 						} else {
 							msg+=" "+nb+" => "+config.cardNumber[element.number - 1]+config.cardType[element.type - 1]+"\n";
 						}
+						nb+=1;
 					}
-					nb+=1;
+					
 					board.discard.push(element);
 				});
 				message.channel.send(`${message.author}`+": __Tirage pour "+`${message.author.username}`+" :__\n"+msg, { split: true });
 				tmp = null;
 				// shuffle ?
-				if ( do_shuffle == 1) {
+				if ( do_shuffle != 0) {
 					for (i = 0; i < board.discard.length; i++) {
 						//console.log(" * " +i);
 						board.deck.push(board.discard[i]);
@@ -95,7 +96,7 @@ module.exports = {
 		
 					board.discard = new Array();
 					shuffle(board.deck);
-					message.channel.send(`${message.author}`+": Arcane(s) tirée(s). Mélange effectué.", { split: true });
+					message.channel.send(`${message.author}`+": "+`${do_shuffle}`+" Arcane(s) tirée(s). Mélange effectué.", { split: true });
 				}
 			} else {
 				// print n random from ARCANE
