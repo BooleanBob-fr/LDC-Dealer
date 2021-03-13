@@ -76,6 +76,7 @@ module.exports = {
 			}
 			tmp.forEach(function(element){
 				if ( element.type == 5 ) {
+					msg+="```css\n * => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
 					do_shuffle += 1 ;
 					//board.discard.push(element);
 				} else {
