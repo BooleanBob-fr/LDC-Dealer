@@ -76,9 +76,16 @@ module.exports = {
 			}
 			tmp.forEach(function(element){
 				if ( element.type == 5 ) {
-					msg+="```css\n * => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
-					do_shuffle += 1 ;
-					//board.discard.push(element);
+					if ( args[1] == "MJ" ) {
+						msg+="```css\n "+nb+" => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
+						do_shuffle += 1 ;
+						newCard.push(element);
+						nb+=1;
+					} else {
+						msg+="```css\n * => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
+						do_shuffle += 1 ;
+						//board.discard.push(element);
+					}
 				} else {
 					if ( config.cardType[element.type - 1].indexOf("Rouge") > -1 ) {
 						msg+="** "+nb+" => "+config.cardNumber[element.number - 1]+config.cardType[element.type - 1]+"**\n";
