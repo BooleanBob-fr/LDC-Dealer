@@ -76,7 +76,7 @@ module.exports = {
 			}
 			tmp.forEach(function(element){
 				if ( element.type == 5 ) {
-					do_shuffle = 1 ;
+					do_shuffle += 1 ;
 					//board.discard.push(element);
 				} else {
 					if ( config.cardType[element.type - 1].indexOf("Rouge") > -1 ) {
@@ -105,7 +105,7 @@ module.exports = {
 			
 		
 			// shuffle ?
-			if ( do_shuffle == 1) {
+			if ( do_shuffle != 0) {
 				for (i = 0; i < board.discard.length; i++) {
 					//console.log(" * " +i);
 					board.deck.push(board.discard[i]);
@@ -113,7 +113,7 @@ module.exports = {
 			
 				board.discard = new Array();
 				shuffle(board.deck);
-				message.channel.send(`${message.author}`+": Arcane(s) tirée(s). Mélange du deck effectué.", { split: true });
+				message.channel.send(`${message.author}`+": "+`${do_shuffle}`+" Arcane(s) tirée(s). Mélange du deck effectué.", { split: true });
 			}
 		} else {
 			message.channel.send(`${message.author}`+": Le premier argument doit être compris entre 1 et 9 !");
