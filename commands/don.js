@@ -53,6 +53,17 @@ module.exports = {
 		}
 		var card = board.hands[my_player_number][my_player_card_number - 1];
 		tmp.push(card);
+		
+		if ( target_found == 1 ) {
+			tmp.forEach(function(element){
+				board.hands[my_target_number].length.push(element);
+			});
+			nb = board.hands[my_target_number].length;
+		} else {
+			board.hands.push(tmp);
+			board.player.push(player_target);
+		}
+		
 		tmp.forEach(function(element){
 			if ( element.type == 5 ) {
 					msg+="```css\n"+nb+" => "+config.cardType[element.type - 1]+config.cardArcane[element.number - 1]+"```\n";
@@ -66,14 +77,9 @@ module.exports = {
 			nb += 1;
 		});
 		
-		if ( target_found == 1 ) {
-			tmp.forEach(function(element){
-				board.hands[my_target_number].push(element);
-			});
-		} else {
-			board.hands.push(tmp);
-			board.player.push(player_target);
-		}
+		
+		
+		
 		board.hands[my_player_number].splice(my_player_card_number - 1, 1);
 		if ( board.hands[my_player_number].length == 0 ) {
 			var removedHand = board.hands.splice(my_player_number,1);
