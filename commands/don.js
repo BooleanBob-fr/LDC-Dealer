@@ -38,12 +38,12 @@ module.exports = {
 			if ( board.player[i] == `${message.author.username}` ) {
 				my_player_number = i;
 				player_found = 1;
-				console.log("Don : Player found.");
+				#console.log("Don : Player found.");
 			}
 			if ( board.player[i] == player_target ) {
 				my_target_number = i;
 				target_found = 1;
-				console.log("Don : Target found.");
+				#console.log("Don : Target found.");
 			}
 		}
 		if ( player_found == 1 ) {
@@ -70,7 +70,7 @@ module.exports = {
 		
 		if ( target_found == 1 ) {
 			tmp.forEach(function(element){
-				board.hands[my_player_number].push(element);
+				board.hands[my_target_number].push(element);
 			});
 		} else {
 			board.hands.push(tmp);
