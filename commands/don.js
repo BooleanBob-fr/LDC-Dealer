@@ -38,12 +38,10 @@ module.exports = {
 			if ( board.player[i] == `${message.author.username}` ) {
 				my_player_number = i;
 				player_found = 1;
-				#console.log("Don : Player found.");
 			}
 			if ( board.player[i] == player_target ) {
 				my_target_number = i;
 				target_found = 1;
-				#console.log("Don : Target found.");
 			}
 		}
 		if ( player_found == 1 ) {
@@ -80,7 +78,6 @@ module.exports = {
 		if ( board.hands[my_player_number].length == 0 ) {
 			var removedHand = board.hands.splice(my_player_number,1);
 			var removedPlayer = board.player.splice(my_player_number,1);
-			console.log("Don : Player Hand empty.");
 		}
 		
 		return message.channel.send(`${message.author}`+": "+`${message.author.username}`+" donne la carte "+msg+" au joueur "+player_target+".", { split: true });
