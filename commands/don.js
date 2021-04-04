@@ -56,7 +56,7 @@ module.exports = {
 		
 		if ( target_found == 1 ) {
 			tmp.forEach(function(element){
-				board.hands[my_target_number].length.push(element);
+				board.hands[my_target_number].push(element);
 			});
 			nb = board.hands[my_target_number].length;
 		} else {
