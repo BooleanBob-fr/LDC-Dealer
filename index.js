@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 const board = require('./board.js');
 
-const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES] });
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
