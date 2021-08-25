@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 const board = require('./board.js');
 
-const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGE_TYPING, Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.DIRECT_MESSAGE_TYPING, Discord.Intents.FLAGS.DIRECT_MESSAGE_REACTIONS] });
+const client = new Discord.Client({ intents: [Discord.Intents.ALL] });
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -21,7 +21,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', message => {
+client.on('messageCreate', message => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
 	//console.log("Work to do !");
