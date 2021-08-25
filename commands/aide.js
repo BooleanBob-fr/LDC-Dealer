@@ -19,14 +19,14 @@ module.exports = {
 			data.push('\n```Vous pouvez obtenir plus d\'informations sur une commande via : '+`${prefix}help [command name]`+'```');
 
 			//return message.author.send(data, { split: true })
-			return message.author.send(data, { split: true })
+			return message.author.send({content: data, { split: true }})
 //				.then(() => {
 //					if (message.channel.type === 'dm') return;
-//					message.reply('I\'ve sent you a DM with all my commands!');
+//					message.reply({content: 'I\'ve sent you a DM with all my commands!'});
 //				})
 //				.catch(error => {
 //					console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-//					message.reply('it seems like I can\'t DM you! Do you have DMs disabled?');
+//					message.reply({content: 'it seems like I can\'t DM you! Do you have DMs disabled?'});
 //				});
 		}
 		
@@ -34,7 +34,7 @@ module.exports = {
 		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
 		if (!command) {
-			return message.author.send(' : Cette commande n\'existe pas!');
+			return message.author.send({content: ' : Cette commande n\'existe pas!'});
 		}
 
 		data.push(`**Name:** ${command.name}`);
@@ -45,6 +45,7 @@ module.exports = {
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
-		message.author.send(data, { split: true });
+		message.author.send({content: data, { split: true }});
 	},
 };
+{content:
