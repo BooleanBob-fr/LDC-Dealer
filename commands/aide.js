@@ -19,7 +19,7 @@ module.exports = {
 			data.push('\n```Vous pouvez obtenir plus d\'informations sur une commande via : '+`${prefix}help [command name]`+'```');
 
 			//return message.author.send(data, { split: true })
-			return message.author.send({ content: data, { split: true }})
+			return message.author.send({ content: data })
 //				.then(() => {
 //					if (message.channel.type === 'dm') return;
 //					message.reply({ content: 'I\'ve sent you a DM with all my commands!'});
@@ -45,7 +45,7 @@ module.exports = {
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
-		message.author.send({ content: data, { split: true }});
+		message.author.send({ content: data });
 	},
 };
 {content:
