@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 const board = require('./board.js');
 
-const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.DIRECT_MESSAGES, Discord.DIRECT_MESSAGE_TYPING] });
+const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.DIRECT_MESSAGES, Discord.Intents.DIRECT_MESSAGE_TYPING, Discord.Intents.DIRECT_MESSAGE_REACTIONS] });
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
