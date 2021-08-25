@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 const board = require('./board.js');
 
-const client = new Discord.Client({ Discord.intents: [Discord.Intents.FLAGS.DIRECT_MESSAGE_TYPING] });
+const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.DIRECT_MESSAGE_TYPING] });
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
