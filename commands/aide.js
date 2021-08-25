@@ -48,4 +48,4 @@ module.exports = {
 		message.author.send({ content: data });
 	},
 };
-{content:
+
