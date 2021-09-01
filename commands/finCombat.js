@@ -18,7 +18,7 @@ module.exports = {
 		var y = 0;
 		
 		if (board.deck == null) {
-			return message.channel.send(`${message.author}`+" : Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send({ content: `${message.author}`+" : Le plateau n'est pas initialisé."}, { split: true });
 		}	
 			
 		for (i = board.player.length - 1; i >= 0 ; i--) {
@@ -35,6 +35,6 @@ module.exports = {
 				board.player.splice(i,1);
 			}
 		};
-		message.channel.send(`${message.author}`+" : Les mains ont été vidées des cartes de base vers la défausse.", { split: true });
+		message.channel.send({ content: `${message.author}`+" : Les mains ont été vidées des cartes de base vers la défausse."}, { split: true });
 	},
 };
