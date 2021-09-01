@@ -63,6 +63,6 @@ module.exports = {
 		shuffle(board.deck);
 			
 		//console.log("Initialization done.");		
-		message.channel.send(`${message.author}`+": Plateau initialisé.", { split: true });
+		message.channel.send({ content: `${message.author}`+": Plateau initialisé."}, { split: true });
 	},
 };
