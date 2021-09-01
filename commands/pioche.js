@@ -15,11 +15,11 @@ module.exports = {
 		var nb = 0;
 		
 		if (board.deck == null) {
-			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send({ content: `${message.author}`+": Le plateau n'est pas initialisé."}, { split: true });
 		}	
 		
 		if (!args.length) {
-			return message.channel.send(`${message.author} : Des arguments sont manquants. Rappel : nombre de cartes voulues.`);
+			return message.channel.send({ content: `${message.author} : Des arguments sont manquants. Rappel : nombre de cartes voulues.`});
 		} 
 		//console.log(" "+args[0]);
 		if(!isNaN(args[0]) && args[0] < 10 && args[0] > 0) {
@@ -50,7 +50,7 @@ module.exports = {
 				if ( nb_tirage_bis != 0 ) {
 					
 					// Reset de pioche
-					message.channel.send(`${message.author}`+": * Mélange du deck effectué en cours de tirage.", { split: true });
+					message.channel.send({ content: `${message.author}`+": * Mélange du deck effectué en cours de tirage."}, { split: true });
 					var i = 0;
 					for (i = 0; i < board.discard.length; i++) {
 						//console.log(" * " +i);
@@ -85,7 +85,7 @@ module.exports = {
 					
 					board.discard.push(element);
 				});
-				message.channel.send(`${message.author}`+": __Tirage pour "+`${message.author.username}`+" :__\n"+msg, { split: true });
+				message.channel.send({ content: `${message.author}`+": __Tirage pour "+`${message.author.username}`+" :__\n"+msg}, { split: true });
 				tmp = null;
 				// shuffle ?
 				if ( do_shuffle != 0) {
@@ -96,7 +96,7 @@ module.exports = {
 		
 					board.discard = new Array();
 					shuffle(board.deck);
-					message.channel.send(`${message.author}`+": "+`${do_shuffle}`+" Arcane(s) tirée(s). Mélange effectué.", { split: true });
+					message.channel.send({ content: `${message.author}`+": "+`${do_shuffle}`+" Arcane(s) tirée(s). Mélange effectué."}, { split: true });
 				}
 			} else {
 				// print n random from ARCANE
@@ -123,12 +123,12 @@ module.exports = {
 					nb+=1;
 					board.arcane.push(element);
 				});
-				message.channel.send(`${message.author}`+": __Tirage :__\n"+msg, { split: true });
+				message.channel.send({ content: `${message.author}`+": __Tirage :__\n"+msg}, { split: true });
 				tmp = null;
 			}
 			
 		} else {
-			return message.channel.send(`${message.author}`+": Le premier argument doit être compris entre 1 et 9 !");
+			return message.channel.send({ content: `${message.author}`+": Le premier argument doit être compris entre 1 et 9 !"});
 		}
 	},
 };
