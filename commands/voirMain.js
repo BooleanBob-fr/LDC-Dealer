@@ -18,7 +18,7 @@ module.exports = {
 		var player_found = 0;
 		
 		if (board.deck == null) {
-			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send({ content: `${message.author}`+": Le plateau n'est pas initialisé."}, { split: true });
 		}
 		
 		for (i = 0; i < board.player.length; i++) {
@@ -42,10 +42,10 @@ module.exports = {
 				}
 				nb += 1;
 			});
-				message.author.send(`${message.author}`+": __Contenu de la main de "+board.player[my_player_number]+" :__\n"+msg, { split: true });
+				message.author.send({ content: `${message.author}`+": __Contenu de la main de "+board.player[my_player_number]+" :__\n"+msg}, { split: true });
 				
 		} else {
-			message.channel.send(""+`${message.author}`+": Tu n'as pas de main, donc pas de chocolat.", { split: true });
+			message.channel.send({ content: ""+`${message.author}`+": Tu n'as pas de main, donc pas de chocolat."}, { split: true });
 		}
 		
 	},
