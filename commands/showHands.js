@@ -17,7 +17,7 @@ module.exports = {
 		var nb = 1;
 		
 		if (board.deck == null) {
-			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send({ content: `${message.author}`+": Le plateau n'est pas initialisé."}, { split: true });
 		}
 		
 		for (i = 0; i < board.player.length; i++) {
@@ -33,7 +33,7 @@ module.exports = {
 				}
 				nb += 1;
 			});
-			message.author.send(`${message.author}`+": __Contenu de la main de "+board.player[i]+" :__\n"+msg, { split: true });
+			message.author.send({ content: `${message.author}`+": __Contenu de la main de "+board.player[i]+" :__\n"+msg}, { split: true });
 			nb = 1;
 			msg = "";
 		};
