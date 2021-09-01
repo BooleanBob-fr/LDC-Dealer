@@ -21,11 +21,11 @@ module.exports = {
 		var nb = 1;
 		
 		if (board.deck == null) {
-			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send({ content: `${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
 		}	
 		
 		if ( args.length != 2 ) {
-			return message.channel.send(`${message.author}`+": Il manque des arguments. Rappel : Numéro de carte et Joueur ciblé par le don.", { split: true });
+			return message.channel.send({ content: `${message.author}`+": Il manque des arguments. Rappel : Numéro de carte et Joueur ciblé par le don.", { split: true });
 		}
 		
 		if(!isNaN(args[0]) && args[0] < 99 && args[0] > 0) {
@@ -46,10 +46,10 @@ module.exports = {
 		}
 		if ( player_found == 1 ) {
 			if ( board.hands[my_player_number].length < my_player_card_number ){
-				return message.channel.send("No card N°"+my_player_card_number+" in "+`${message.author.username}`+" hand.", { split: true });
+				return message.channel.send({ content: "No card N°"+my_player_card_number+" in "+`${message.author.username}`+" hand.", { split: true });
 			}			
 		} else {
-			return message.channel.send(""+`${message.author.username}`+" : Vous n'avez pas de main.", { split: true });
+			return message.channel.send({ content: ""+`${message.author.username}`+" : Vous n'avez pas de main.", { split: true });
 		}
 		var card = board.hands[my_player_number][my_player_card_number - 1];
 		tmp.push(card);
@@ -86,7 +86,7 @@ module.exports = {
 			var removedPlayer = board.player.splice(my_player_number,1);
 		}
 		
-		return message.channel.send(`${message.author}`+": "+`${message.author.username}`+" donne la carte "+msg+" au joueur "+player_target+".", { split: true });
+		return message.channel.send({ content: `${message.author}`+": "+`${message.author.username}`+" donne la carte "+msg+" au joueur "+player_target+".", { split: true });
 	
 	},
 };
