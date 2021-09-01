@@ -14,7 +14,7 @@ module.exports = {
 		
 		msg = "";
 		if (board.deck == null) {
-			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send({ content: `${message.author}`+": Le plateau n'est pas initialisé."}, { split: true });
 		}
 		if ( board.discard.length == 0 ) {
 			msg = "Vide.";
@@ -32,6 +32,6 @@ module.exports = {
 			}
 			nb += 1;
 		});
-		message.author.send(`${message.author}`+": __Contenu de la défausse :__\n"+msg, { split: true });		
+		message.author.send({ content: `${message.author}`+": __Contenu de la défausse :__\n"+msg}, { split: true });		
 	},
 };
