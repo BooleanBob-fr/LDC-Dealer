@@ -15,7 +15,7 @@ module.exports = {
 		
 		
 		if (board.deck == null) {
-			return message.channel.send(`${message.author}`+": Le plateau n'est pas initialisé.", { split: true });
+			return message.channel.send({ content: `${message.author}`+": Le plateau n'est pas initialisé."}, { split: true });
 		}
 		
 		var tmp = new Array();
@@ -63,9 +63,9 @@ module.exports = {
 		}
 		
 		if ( me_only == 0 ){
-			message.channel.send(`${message.author}`+": __Tirage d'une Arcane pour "+board.player[my_player_number]+" :__\n"+msg, { split: true });
+			message.channel.send({ content: `${message.author}`+": __Tirage d'une Arcane pour "+board.player[my_player_number]+" :__\n"+msg}, { split: true });
 		} else {
-			message.author.send(`${message.author}`+": __Tirage d'une Arcane pour "+board.player[my_player_number]+" :__\n"+msg, { split: true });
+			message.author.send({ content: `${message.author}`+": __Tirage d'une Arcane pour "+board.player[my_player_number]+" :__\n"+msg}, { split: true });
 		}
 	},
 };
