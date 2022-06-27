@@ -13,9 +13,9 @@ module.exports = {
 
 		if (!args.length) {
 			data.push('\n``` Voici la liste des commandes disponibles pour les PJ et leurs alias :```');
-			data.push(commands.map(function(command){ if( command.user == 'PJ' ) { return "** Alias de "+command.name+" : "+command.aliases+"**\n"+" -> "+command.description+"\n"; } }).join(''));
+			data.push(commands.map(function(command){ if( command.user == 'PJ' ) { return "** Alias de "+command.name+" : **"+command.aliases+"\n"+" -> "+command.description+"\n"; } }).join(''));
 			data.push('\n``` Voici la liste des commandes disponibles pour les MJ et leurs alias :```');
-			data.push(commands.map(function(command){ if( command.user == 'MJ' ) { return "** Alias de "+command.name+" : "+command.aliases+"**\n"+" -> "+command.description+"\n"; } }).join(''));
+			data.push(commands.map(function(command){ if( command.user == 'MJ' ) { return "** Alias de "+command.name+" : **"+command.aliases+"\n"+" -> "+command.description+"\n"; } }).join(''));
 			data.push('\n```Vous pouvez obtenir plus d\'informations sur une commande via : '+`${prefix}help [command name]`+'```');
 
 			//return message.author.send(data, { split: true })
