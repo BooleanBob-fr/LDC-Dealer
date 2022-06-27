@@ -1,0 +1,13 @@
+{
+  "name": "LDC-Dealer",
+  "version": "1.0.0",
+  "description": "Card Dealer for Les Lames du Cardinal",
+  "main": "index.js",
+  "dependencies": {
+    "@discordjs/rest": "^0.5.0",
+    "discord-api-types": "^0.35.0",
+    "discord.js": "^13.8.1",
+    "random": "^3.0.6",
+    "shuffle-array": "^1.0.1"
+  }
+}
